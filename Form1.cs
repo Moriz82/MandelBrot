@@ -60,6 +60,7 @@ namespace Mandelbrot
         static void RunMandelbrot(PictureBox pictureBox, Form1 form, double iStart, double rStart, double width, double height, int maxIterations)
         {
 	        Bitmap map = new Bitmap((int)form.Width*2, (int)(form.Height*2)+200);
+
 	        for (int x = 0; x != map.Width; x++)
 			{
 				for (int y = 0; y != map.Height; y++)
@@ -93,13 +94,13 @@ namespace Mandelbrot
 		}
 		static Color GetColor(int value, int maxIterations)
 		{
-			Color CalcColor = Color.FromArgb(1, 0, 0, 0);
+			Color CalcColor = Color.FromArgb(255, 0, 0, 0);
 
 			if (value != maxIterations)
 			{
-				int colorNr = value % 16;
+				int colorNum = value % 16;
 
-				switch (colorNr)
+				switch (colorNum)
 				{
 					case 0:
 					{

@@ -48,16 +48,16 @@ namespace Mandelbrot
 
             if (small == 0.0)
             {
-                return (large);
+                return large;
             }
             else if (double.IsPositiveInfinity(large) && !double.IsNaN(small))
             {
-                return (double.PositiveInfinity);
+                return double.PositiveInfinity;
             }
             else
             {
                 double ratio = small / large;
-                return (large * Math.Sqrt(1.0 + ratio * ratio));
+                return large * Math.Sqrt(1.0 + ratio * ratio);
             }
 
         }
